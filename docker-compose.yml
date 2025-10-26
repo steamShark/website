@@ -5,5 +5,5 @@ services:
       dockerfile: Dockerfile
     container_name: steamshark-web
     ports:
-    - "8080:8080"
+    - "8090:8090"
     restart: unless-stopped
