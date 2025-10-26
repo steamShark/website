@@ -39,7 +39,7 @@ export const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="w-full flex flex-row items-center justify-start gap-5">
+                    {/* <div className="w-full flex flex-row items-center justify-start gap-5">
                         <p className="text-sm font-semibold">Live Stats</p>
                         <Badge className="bg-green-500/20 hover:bg-green-500/50 text-green-400">
                             API Online 🟢
@@ -47,7 +47,7 @@ export const Footer = () => {
                         <Badge className="bg-green-500/20 hover:bg-green-500/50 text-green-400">
                             Extension Online 🟢
                         </Badge>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-border/30 text-center text-sm text-muted-foreground">

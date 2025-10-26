@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Search, Globe, Shield, AlertTriangle, ExternalLink, Eye } from "lucide-react";
+import { Search, Globe, Shield, AlertTriangle, ExternalLink, Eye, Loader2, RefreshCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import { useAllWebsites } from "@/hooks/use-websites";
 import { Website } from "@/models/websites";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function DatabaseList() {
     const [searchParams] = useSearchParams();
@@ -60,13 +62,43 @@ export default function DatabaseList() {
     }, [searchParams]);
 
     if (isWebsitesLoading) {
-        return (<p>Loading...</p>)
+        return (
+            <div className="flex min-h-screen items-center justify-center text-center">
+                <div className="flex items-center gap-3 text-muted-foreground" role="status" aria-live="polite" aria-busy="true">
+                    <Loader2 className="h-6 w-6 animate-spin" aria-hidden="true" />
+                    <h2 className="text-3xl">Loading database</h2>
+                </div>
+            </div>
+        );
     }
 
     if (isWebsitesError) {
         return (
-            <p>Error:</p>
-        )
+            <div className="flex min-h-screen items-center justify-center p-4 text-center">
+                <Alert variant="destructive" role="alert" className="w-full max-w-md">
+                    <AlertTitle>Couldn’t load websites database!</AlertTitle>
+                    <AlertDescription>
+                        Something went wrong while fetching your database.
+                        {WebsitesError && (
+                            <span className="block mt-1 text-xs text-muted-foreground">
+                                {String((WebsitesError as Error)?.message ?? WebsitesError)}
+                            </span>
+                        )}
+                    </AlertDescription>
+
+                    <div className="mt-3 flex justify-center">
+                        <Button
+                            size="sm"
+                            onClick={() => refetchWebsites?.()}
+                            aria-label="Try loading again"
+                        >
+                            <RefreshCcw className="mr-2 h-4 w-4" aria-hidden="true" />
+                            Try again
+                        </Button>
+                    </div>
+                </Alert>
+            </div>
+        );
     }
 
     const filteredWebsites = dataWebsites.data.filter(website => {

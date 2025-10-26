@@ -8,6 +8,8 @@ import { TrustedCard } from "@/components/TrustedCard";
 import { useNotTrustedWebsites, useTrustedWebsites } from "@/hooks/use-websites";
 import NotTrustedCard from "@/components/NotTrustedCard";
 import { Marquee } from "@/components/ui/marquee";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 /* import heroImage from "@/assets/hero-shark.jpg"; */
 
 const Index = () => {
@@ -51,8 +53,6 @@ const Index = () => {
         refetch: refetchNotTrusted,
         isFetching: isNotTrustedFetching,
     } = useNotTrustedWebsites();
-
-    if (isTrustedLoading || isNotTrustedLoading) { return <p>Loading...</p> }
 
     return (
         <div className="min-h-screen">
@@ -241,20 +241,154 @@ const Index = () => {
                         </div>
                         {/* CONTENT */}
                         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-                            <Marquee pauseOnHover className="[--duration:20s]">
-                                {dataTrusted.map((website) => (
-                                    <TrustedCard key={website.id} id={website.id} domain={website.domain}
-                                        displayName={website.display_name} description={website.description}
-                                        isOfficial={website.is_official} />
-                                ))}
-                            </Marquee>
-                            <Marquee reverse pauseOnHover className="[--duration:20s]">
-                                {dataNotTrusted.map((website) => (
-                                    <NotTrustedCard key={website.id} id={website.id} domain={website.domain}
-                                        displayName={website.display_name} description={website.description}
-                                        isOfficial={website.is_official} />
-                                ))}
-                            </Marquee>
+                            {/* <section className="space-y-3">
+                                <div className="flex items-center gap-3">
+                                    <h2 className="text-xl font-medium">Trusted</h2>
+                                    {isTrustedFetching && <span className="text-sm text-muted-foreground">Updating…</span>}
+                                </div>
+
+                                {isTrustedError && (
+                                    <p className="text-red-600 text-sm">Failed to load trusted: {String(notTrustedError)}</p>
+                                )}
+
+                                {isTrustedLoading ? (
+                                    <p>Loading?</p>
+                                ) : (
+                                    <Marquee pauseOnHover className="[--duration:20s]">
+                                        {dataTrusted.map((website) => (
+                                            <TrustedCard key={website.id} id={website.id} domain={website.domain}
+                                                displayName={website.display_name} description={website.description}
+                                                isOfficial={website.is_official} />
+                                        ))}
+                                    </Marquee>
+                                )}
+                            </section> */}
+                            <section className="space-y-3">
+                                {/* Header */}
+                                <div className="flex items-center gap-3">
+                                    <h2 className="text-xl font-medium">Trusted</h2>
+                                    {isTrustedFetching && (
+                                        <Badge variant="secondary" className="text-xs">Updating…</Badge>
+                                    )}
+                                </div>
+
+                                {/* Error state (no retry button) */}
+                                {isTrustedError && (
+                                    <Alert variant="destructive" role="alert" className="max-w-xl">
+                                        <AlertTitle>Failed to load trusted websites</AlertTitle>
+                                        <AlertDescription className="text-sm">
+                                            {String((trustedError as Error)?.message ?? trustedError ?? "Unknown error")}
+                                        </AlertDescription>
+                                    </Alert>
+                                )}
+
+                                {/* Loading state */}
+                                {isTrustedLoading && !isTrustedError && (
+                                    <div className="flex gap-4 overflow-hidden">
+                                        {[...Array(4)].map((_, i) => (
+                                            <div key={i} className="w-64 flex-shrink-0">
+                                                <Skeleton className="h-28 w-full rounded-xl" />
+                                                <div className="mt-2 space-y-2">
+                                                    <Skeleton className="h-4 w-40" />
+                                                    <Skeleton className="h-3 w-32" />
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+
+                                {/* Loaded state */}
+                                {!isTrustedLoading && !isTrustedError && (
+                                    dataTrusted?.length ? (
+                                        <Marquee pauseOnHover className="[--duration:20s]">
+                                            {dataTrusted.map((website) => (
+                                                <TrustedCard
+                                                    key={website.id}
+                                                    id={website.id}
+                                                    domain={website.domain}
+                                                    displayName={website.display_name}
+                                                    description={website.description}
+                                                    isOfficial={website.is_official}
+                                                />
+                                            ))}
+                                        </Marquee>
+                                    ) : (
+                                        <p className="text-sm text-muted-foreground">No trusted websites yet.</p>
+                                    )
+                                )}
+                            </section>
+
+                            {/* <section className="space-y-3">
+                                <div className="flex items-center gap-3">
+                                    <h2 className="text-xl font-medium">Trusted</h2>
+                                    {isNotTrustedFetching && <span className="text-sm text-muted-foreground">Updating…</span>}
+                                </div>
+
+                                {isNotTrustedError && (
+                                    <p className="text-red-600 text-sm">Failed to load trusted: {String(trustedError)}</p>
+                                )}
+
+                                {isNotTrustedLoading ? (
+                                    <p>Loading?</p>
+                                ) : (
+                                    <Marquee reverse pauseOnHover className="[--duration:20s]">
+                                        {dataNotTrusted.map((website) => (
+                                            <NotTrustedCard key={website.id} id={website.id} domain={website.domain}
+                                                displayName={website.display_name} description={website.description}
+                                                isOfficial={website.is_official} />
+                                        ))}
+                                    </Marquee>
+                                )}
+                            </section> */}
+                            <section className="space-y-3">
+                                {/* Header */}
+                                <div className="flex items-center gap-3">
+                                    <h2 className="text-xl font-medium">Trusted</h2>
+                                    {isNotTrustedFetching && (
+                                        <Badge variant="secondary" className="text-xs">Updating…</Badge>
+                                    )}
+                                </div>
+
+                                {/* Error state (no retry button) */}
+                                {isNotTrustedError && (
+                                    <Alert variant="destructive" role="alert" className="max-w-xl">
+                                        <AlertTitle>Failed to load not trusted websites</AlertTitle>
+                                        <AlertDescription className="text-sm">
+                                            {String((notTrustedError as Error)?.message ?? notTrustedError ?? "Unknown error")}
+                                        </AlertDescription>
+                                    </Alert>
+                                )}
+
+                                {/* Loading state */}
+                                {isNotTrustedLoading && !isNotTrustedError && (
+                                    <div className="flex gap-4 overflow-hidden">
+                                        {[...Array(4)].map((_, i) => (
+                                            <div key={i} className="w-64 flex-shrink-0">
+                                                <Skeleton className="h-28 w-full rounded-xl" />
+                                                <div className="mt-2 space-y-2">
+                                                    <Skeleton className="h-4 w-40" />
+                                                    <Skeleton className="h-3 w-32" />
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+
+                                {/* Loaded state */}
+                                {!isNotTrustedLoading && !isNotTrustedError && (
+                                    dataNotTrusted?.length ? (
+                                        <Marquee pauseOnHover className="[--duration:20s]">
+                                            {dataNotTrusted.map((website) => (
+                                                <NotTrustedCard key={website.id} id={website.id} domain={website.domain}
+                                                    displayName={website.display_name} description={website.description}
+                                                    isOfficial={website.is_official} />
+                                            ))}
+                                        </Marquee>
+                                    ) : (
+                                        <p className="text-sm text-muted-foreground">No trusted websites yet.</p>
+                                    )
+                                )}
+                            </section>
                             <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
                             <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
                         </div>

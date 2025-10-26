@@ -6,12 +6,12 @@ import { Calendar, GitCommit, Plus, Bug, Zap, ExternalLink, Github, Globe, FileC
 import { useState } from "react";
 
 export default function Changelog() {
-  const [selectedVersion, setSelectedVersion] = useState<string | null>(null);
+ // const [selectedVersion, setSelectedVersion] = useState<string | null>(null);
 
   const websiteChangelogEntries = [
     {
       version: "v2.0.0",
-      date: "25/09/2025",
+      date: "01/11/2025",
       type: "major",
       githubRelease: "https://github.com/steamshark/releases/tag/v2.0.0",
       changes: [
@@ -49,6 +49,19 @@ export default function Changelog() {
 
   const extensionChangelogEntries = [
     {
+      version: "v2.0.0",
+      date: "01/11/2025",
+      type: "major",
+      githubRelease: "https://github.com/Franciscoborges2002/steamShark",
+      changes: [
+        {
+          type: "major",
+          title: "Information change to API",
+          description: "Now information from websites is provided by steamshark.com API"
+        }
+      ]
+    },
+    {
       version: "v1.0.1",
       date: "23/02/2025",
       type: "minor",
@@ -79,7 +92,7 @@ export default function Changelog() {
   const apiChangelogEntries = [
     {
       version: "v1.0.0",
-      date: "2024-02-10",
+      date: "01/11/2025",
       type: "major",
       githubRelease: "https://github.com/steamshark/api/releases/tag/v1.0.0",
       changes: [

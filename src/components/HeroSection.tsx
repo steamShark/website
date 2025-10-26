@@ -110,7 +110,7 @@ export default function HeroSection() {
                         <Card className="relative animate-float gaming-card p-8 space-y-6">
 
                             <CardHeader >
-                                <h3 className="text-xl font-semibold">Stats</h3>{/* Live, future */}
+                                <h3 className="text-xl font-semibold">Statistics</h3>{/* Live, future */}
                             </CardHeader>
 
                             <CardContent className="flex flex-col gap-5">
@@ -133,14 +133,14 @@ export default function HeroSection() {
                                         </div>
                                     </div> */}
                             </CardContent>
-                            <CardFooter className="flex flex-row items-center gap-10">
+                            {/* <CardFooter className="flex flex-row items-center gap-10">
                                 <Badge className="bg-green-500/20 hover:bg-green-500/50 text-green-400">
                                     API Online 🟢
                                 </Badge>
                                 <Badge className="bg-green-500/20 hover:bg-green-500/50 text-green-400">
                                     Extension Online 🟢
                                 </Badge>
-                            </CardFooter>
+                            </CardFooter> */}
                         </Card>
                     </div>
                 </div>

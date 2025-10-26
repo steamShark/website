@@ -1,0 +1,9 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: steamshark-web
+    ports:
+    - "80:80"
+    restart: unless-stopped
