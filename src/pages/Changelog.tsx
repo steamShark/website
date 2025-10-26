@@ -13,7 +13,7 @@ export default function Changelog() {
       version: "v2.0.0",
       date: "01/11/2025",
       type: "major",
-      githubRelease: "https://github.com/steamshark/releases/tag/v2.0.0",
+     /*  githubRelease: "https://github.com/steamshark/releases/tag/v2.0.0", */
       changes: [
         {
           type: "feature",
@@ -65,7 +65,6 @@ export default function Changelog() {
       version: "v1.0.1",
       date: "23/02/2025",
       type: "minor",
-      githubRelease: "https://github.com/Franciscoborges2002/steamShark",
       changes: [
         {
           type: "minor",
@@ -78,7 +77,6 @@ export default function Changelog() {
       version: "v1.0.0",
       date: "20/02/2025",
       type: "major",
-      githubRelease: "https://github.com/Franciscoborges2002/steamShark",
       changes: [
         {
           type: "feature",
@@ -94,7 +92,6 @@ export default function Changelog() {
       version: "v1.0.0",
       date: "01/11/2025",
       type: "major",
-      githubRelease: "https://github.com/steamshark/api/releases/tag/v1.0.0",
       changes: [
         {
           type: "feature",
