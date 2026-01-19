@@ -8,7 +8,7 @@ export default function HeroSection() {
 
     const stats = [
         { number: "10+", label: "Downloads" },
-        { number: "100+", label: "Tracked Websites, Tools and Extensions" },
+        { number: "100+", label: "Tracked Websites" },/* , Tools and Extensions */
 /*         { number: "99.9%", label: "Uptime" },
         { number: "10M+", label: "Interations" } */
     ];
@@ -33,9 +33,9 @@ export default function HeroSection() {
                                     {/* <Badge className="bg-primary/20 text-primary border-primary/30">
                                         🚀 New Extension Available
                                     </Badge> */}
-                                    <Link to="">
+                                    <Link to="https://chromewebstore.google.com/detail/%F0%9F%A6%88steamshark/jljepdlbbomdcdmaafflabapkdhiglnf" target="_blank" rel="noopener noreferrer">
                                         <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 hover:bg-blue-500/50 cursor-pointer">
-                                            Version 1.1.0
+                                            Version 2.0.0
                                         </Badge>
                                     </Link>
                                     <Link to="https://github.com/steamShark" target="_blank" rel="noopener noreferrer">
@@ -110,7 +110,7 @@ export default function HeroSection() {
                         <Card className="relative animate-float gaming-card p-8 space-y-6">
 
                             <CardHeader >
-                                <h3 className="text-xl font-semibold">Statistics</h3>{/* Live, future */}
+                                <h3 className="text-xl font-semibold">📊 Statistics</h3>{/* Live, future */}
                             </CardHeader>
 
                             <CardContent className="flex flex-col gap-5">

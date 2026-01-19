@@ -1,6 +1,15 @@
-# SteamShark Web
+<h1 align='center'>
+  🦈steamShark API
+</h1>
 
-A **React + Vite** frontend for SteamShark.
+<p align='center'>
+  <a href="https://github.com/sponsors/alexandresanlim"><img alt="version" src="https://img.shields.io/badge/Version-2.0.0-blue" /></a>
+  &nbsp;
+  <a href="https://github.com/sponsors/alexandresanlim"><img alt="Sponsor" src="https://img.shields.io/badge/Opensource-green" /></a>
+</p>
+<br />
+
+A React + Vite frontend for SteamShark website.
 
 ## 🚀 Development
 
@@ -20,11 +29,21 @@ npm run preview
 
 ## 🐳 Docker
 
-To build and run with Docker:
+### Dockerfile
+
+To build and run with Dockerfile:
 
 ```bash
 docker build -t steamshark-web .
-docker run -p 8080:80 steamshark-web
+docker run -p 8090:8090 steamshark-web
 ```
 
-Visit [http://localhost:80](http://localhost:80)
+Visit [http://localhost:8090](http://localhost:8090)
+
+### Docker compose
+
+You can simply run
+```bash
+docker compose up --build -d
+```
+Visit [http://localhost:8090](http://localhost:8090)

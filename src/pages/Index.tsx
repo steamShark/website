@@ -22,7 +22,7 @@ const Index = () => {
         {
             icon: Shield,
             title: "Secure & Safe",
-            description: "Privacy-focused with not gathering no information from the user"
+            description: "Privacy-focused, no gathering of information from the user"
         },
         {
             icon: Users,

@@ -38,7 +38,10 @@ export default function DatabaseList() {
         }, 1000);
     };
 
-    const getTrustBadge = (trustLevel: boolean) => {
+    const getTrustBadge = (trustLevel: boolean, official: boolean) => {
+        if (official) {
+            return <Badge variant="default" className="bg-green-600"><Shield className="w-3 h-3 mr-1" />Official</Badge>;
+        }
         switch (trustLevel) {
             case false:
                 return <Badge variant="default" className="bg-green-600"><Shield className="w-3 h-3 mr-1" />Trusted</Badge>;
@@ -195,12 +198,12 @@ export default function DatabaseList() {
                                         <TableCell className="font-mono text-sm text-muted-foreground">
                                             {website.url}
                                         </TableCell>
-                                        <TableCell>{getTrustBadge(website.is_not_trusted)}</TableCell>
+                                        <TableCell>{getTrustBadge(website.is_not_trusted, website.is_official)}</TableCell>
                                         <TableCell>{website.type}</TableCell>
                                         <TableCell>
-                                            <span className={website.occurrences.length > 10 ? "text-red-500 font-medium" : "text-muted-foreground"}>
+                                            {/* <span className={website.occurrences.length > 10 ? "text-red-500 font-medium" : "text-muted-foreground"}>
                                                 {website.occurrences.length}
-                                            </span>
+                                            </span> */}
                                         </TableCell>
                                         <TableCell>
                                             {website.verified ? (
@@ -248,8 +251,8 @@ export default function DatabaseList() {
                 </Card>
 
                 {/* Pagination */}
-                {filteredWebsites.length > itemsPerPage && (
-                    <div className="mt-8 flex justify-center">
+                {/* {filteredWebsites.length > itemsPerPage && ( */}
+                {/* <div className="mt-8 flex justify-center">
                         <Pagination>
                             <PaginationContent>
                                 <PaginationItem>
@@ -290,8 +293,8 @@ export default function DatabaseList() {
                                 </PaginationItem>
                             </PaginationContent>
                         </Pagination>
-                    </div>
-                )}
+                    </div> */}
+                {/* )} */}
 
                 {/* Results Info */}
                 {filteredWebsites.length > 0 && (
