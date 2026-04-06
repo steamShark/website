@@ -219,7 +219,7 @@ export default function DatabaseList() {
                                                     variant="outline"
                                                     size="sm"
                                                 >
-                                                    <Link to={`/website/${website.id}`}>
+                                                    <Link to={`/website/${website.domain}`}>
                                                         <Eye className="w-3 h-3 mr-1" />
                                                         Details
                                                     </Link>
