@@ -241,28 +241,6 @@ const Index = () => {
                         </div>
                         {/* CONTENT */}
                         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-                            {/* <section className="space-y-3">
-                                <div className="flex items-center gap-3">
-                                    <h2 className="text-xl font-medium">Trusted</h2>
-                                    {isTrustedFetching && <span className="text-sm text-muted-foreground">Updating…</span>}
-                                </div>
-
-                                {isTrustedError && (
-                                    <p className="text-red-600 text-sm">Failed to load trusted: {String(notTrustedError)}</p>
-                                )}
-
-                                {isTrustedLoading ? (
-                                    <p>Loading?</p>
-                                ) : (
-                                    <Marquee pauseOnHover className="[--duration:20s]">
-                                        {dataTrusted.map((website) => (
-                                            <TrustedCard key={website.id} id={website.id} domain={website.domain}
-                                                displayName={website.display_name} description={website.description}
-                                                isOfficial={website.is_official} />
-                                        ))}
-                                    </Marquee>
-                                )}
-                            </section> */}
                             <section className="space-y-3">
                                 {/* Header */}
                                 <div className="flex items-center gap-3">

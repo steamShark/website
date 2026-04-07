@@ -51,7 +51,7 @@ export const Footer = () => {
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-border/30 text-center text-sm text-muted-foreground">
-                    <p>© 2025 <span className="font-bold">SteamShark</span>. Protect yourself.</p>
+                    <p>© 2026 <span className="font-bold">SteamShark</span>. Protect yourself.</p>
                 </div>
             </div>
         </footer>
