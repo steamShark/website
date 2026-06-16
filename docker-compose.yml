@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=${VITE_API_URL:-https://steamshark.app}
     container_name: steamshark-web
     ports:
     - "8090:8090"
