@@ -40,11 +40,11 @@ export default function DatabaseList() {
 
     const getTrustBadge = (trustLevel: boolean, official: boolean) => {
         if (official) {
-            return <Badge variant="default" className="bg-green-600"><Shield className="w-3 h-3 mr-1" />Official</Badge>;
+            return <Badge variant="default" className="bg-success-deep"><Shield className="w-3 h-3 mr-1" />Official</Badge>;
         }
         switch (trustLevel) {
             case false:
-                return <Badge variant="default" className="bg-green-600"><Shield className="w-3 h-3 mr-1" />Trusted</Badge>;
+                return <Badge variant="default" className="bg-success-deep"><Shield className="w-3 h-3 mr-1" />Trusted</Badge>;
             case true:
                 return <Badge variant="destructive"><AlertTriangle className="w-3 h-3 mr-1" />Not Trusted</Badge>;
             default:

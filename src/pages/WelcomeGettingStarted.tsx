@@ -123,7 +123,7 @@ export default function WelcomeGettingStarted() {
                         </CardHeader>
                         <CardContent className="grid gap-4 md:grid-cols-2">
                             <div className="flex items-start gap-3">
-                                <CheckCircle2 className="mt-1 h-5 w-5 text-green-600" />
+                                <CheckCircle2 className="mt-1 h-5 w-5 text-success-deep" />
                                 <div>
                                     <p className="font-medium">Trust badge on known sites</p>
                                     <p className="text-sm text-muted-foreground">SteamShark labels official Valve/partner domains and warns on impersonations.</p>

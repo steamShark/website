@@ -15,11 +15,11 @@ interface TrustedWebsiteCard {
 const getTrustBadge = (trustLevel: string) => {
     switch (trustLevel) {
         case "low":
-            return <Badge className="bg-green-500/20 text-green-400 border-green-500/50">Trusted</Badge>;
+            return <Badge className="bg-success/20 text-success border-success/50">Trusted</Badge>;
         case "medium":
-            return <Badge className="bg-red-500/20 text-red-400 border-red-500/50">Meium</Badge>;
+            return <Badge className="bg-error/20 text-error border-error/50">Medium</Badge>;
         case "high":
-            return <Badge variant="outline" className="text-yellow-400 border-yellow-500/50">High</Badge>;
+            return <Badge variant="outline" className="text-pending border-pending/50">High</Badge>;
         default:
             return <Badge variant="outline">Unknown</Badge>;
     }
@@ -36,9 +36,9 @@ export function TrustedCard({ id, domain, displayName, description, isOfficial }
                 {/* CARDS */}
                 <div className="flex flex-row gap-2">
                     {isOfficial ? (
-                        <Badge variant="outline" className="text-green-400 border-green-500/50">Official</Badge>
+                        <Badge variant="outline" className="text-success border-success/50">Official</Badge>
                     ) : (
-                        <Badge variant="outline" className="text-green-400 border-green-500/50">Not Official</Badge>
+                        <Badge variant="outline" className="text-muted-foreground border-border">Not Official</Badge>
                     )}
                 </div>
             </CardHeader>

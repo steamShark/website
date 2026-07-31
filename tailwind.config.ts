@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
     darkMode: ["class"],
@@ -18,6 +19,20 @@ export default {
     		}
     	},
     	extend: {
+    		fontFamily: {
+    			sans: ['"Roboto Flex"', 'system-ui', 'sans-serif'],
+    		},
+    		fontSize: {
+    			'title-1':      ['64px', { fontWeight: '700', letterSpacing: '-0.02em', lineHeight: '1.1' }],
+    			'header-2':     ['40px', { fontWeight: '700', letterSpacing: '-0.02em', lineHeight: '1.15' }],
+    			'header-3':     ['24px', { fontWeight: '700', letterSpacing: '-0.02em', lineHeight: '1.2' }],
+    			'subtitle':     ['24px', { fontWeight: '500', lineHeight: '1.3' }],
+    			'body':         ['16px', { fontWeight: '500', lineHeight: '1.4' }],
+    			'body-bold':    ['16px', { fontWeight: '700', lineHeight: '1.4' }],
+    			'small':        ['14px', { fontWeight: '500', lineHeight: '1.4' }],
+    			'pre-title':    ['10px', { fontWeight: '700', letterSpacing: '0.03em', lineHeight: '1' }],
+    			'button-label': ['10px', { fontWeight: '700', letterSpacing: '0.03em', lineHeight: '1' }],
+    		},
     		colors: {
     			border: 'hsl(var(--border))',
     			input: 'hsl(var(--input))',
@@ -68,6 +83,21 @@ export default {
     			},
     			shark: {
     				accent: 'hsl(var(--shark-accent))'
+    			},
+    			success: {
+    				DEFAULT: 'hsl(var(--success))',
+    				deep: 'hsl(var(--success-deep))',
+    				badge: 'hsl(var(--success-badge))',
+    			},
+    			error: {
+    				DEFAULT: 'hsl(var(--error))',
+    				deep: 'hsl(var(--error-deep))',
+    				badge: 'hsl(var(--error-badge))',
+    			},
+    			pending: {
+    				DEFAULT: 'hsl(var(--pending))',
+    				deep: 'hsl(var(--pending-deep))',
+    				badge: 'hsl(var(--pending-badge))',
     			}
     		},
     		borderRadius: {
@@ -112,10 +142,10 @@ export default {
     			},
     			'pulse-glow': {
     				'0%, 100%': {
-    					boxShadow: '0 0 20px hsl(199 89% 48% / 0.3)'
+    					boxShadow: '0 0 20px hsl(224 30% 60% / 0.3)'
     				},
     				'50%': {
-    					boxShadow: '0 0 40px hsl(199 89% 48% / 0.6)'
+    					boxShadow: '0 0 40px hsl(224 30% 60% / 0.6)'
     				}
     			},
     			'shark-swim': {
@@ -137,6 +167,5 @@ export default {
     		}
     	}
     },
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    plugins: [require("tailwindcss-animate")],
+    plugins: [tailwindcssAnimate],
 } satisfies Config;

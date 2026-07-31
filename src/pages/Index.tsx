@@ -174,7 +174,7 @@ const Index = () => {
                                     <p className="text-muted-foreground mb-4">
                                         Start browsing Steam securely
                                     </p>
-                                    <Badge className="bg-green-500/20 text-green-400">
+                                    <Badge className="bg-success/20 text-success">
                                         Ready to use!
                                     </Badge>
                                 </CardContent>
@@ -303,7 +303,7 @@ const Index = () => {
                                 </div>
 
                                 {isNotTrustedError && (
-                                    <p className="text-red-600 text-sm">Failed to load trusted: {String(trustedError)}</p>
+                                    <p className="text-error text-sm">Failed to load trusted: {String(trustedError)}</p>
                                 )}
 
                                 {isNotTrustedLoading ? (

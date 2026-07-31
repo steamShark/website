@@ -11,11 +11,11 @@ import { Badge } from "./ui/badge";
 function RiskBadge({ level }: { level: Website["risk_level"] }) {
     switch (level) {
         case "low":
-            return <Badge variant="secondary" className="bg-green-100 text-green-700">Low Risk</Badge>;
+            return <Badge variant="secondary" className="bg-success-badge text-success">Low Risk</Badge>;
         case "medium":
-            return <Badge variant="secondary" className="bg-yellow-100 text-yellow-700">Medium Risk</Badge>;
+            return <Badge variant="secondary" className="bg-pending-badge text-pending">Medium Risk</Badge>;
         case "high":
-            return <Badge variant="secondary" className="bg-red-100 text-red-700">High Risk</Badge>;
+            return <Badge variant="secondary" className="bg-error-badge text-error">High Risk</Badge>;
         default:
             return <Badge variant="secondary" className="bg-gray-200 text-gray-700">Unknown</Badge>;
     }

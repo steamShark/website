@@ -8,64 +8,77 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 210 11% 15%;
-    --foreground: 213 31% 91%;
+    --background: 224 52% 4%;      /* #050810 */
+    --foreground: 224 48% 94%;     /* #E8ECF7 */
 
-    --card: 217 19% 18%;
-    --card-foreground: 213 31% 91%;
+    --card: 227 44% 8%;            /* #0C101F */
+    --card-foreground: 224 48% 94%;
 
-    --popover: 217 19% 18%;
-    --popover-foreground: 213 31% 91%;
+    --popover: 227 44% 8%;
+    --popover-foreground: 224 48% 94%;
 
-    --primary: 199 89% 48%;
-    --primary-foreground: 210 11% 15%;
+    --primary: 224 30% 60%;        /* #7B8BB8 */
+    --primary-foreground: 224 52% 4%;
 
-    --secondary: 217 19% 24%;
-    --secondary-foreground: 213 31% 91%;
+    --secondary: 226 39% 19%;      /* #1E2745 */
+    --secondary-foreground: 224 48% 94%;
 
-    --muted: 217 19% 24%;
-    --muted-foreground: 215 16% 57%;
+    --muted: 226 39% 19%;
+    --muted-foreground: 224 25% 47%; /* #5B6B96 */
 
-    --accent: 199 89% 48%;
-    --accent-foreground: 210 11% 15%;
+    --accent: 226 32% 35%;         /* #3D4A76 */
+    --accent-foreground: 224 48% 94%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 224 48% 94%;
 
-    --border: 217 19% 24%;
-    --input: 217 19% 24%;
-    --ring: 199 89% 48%;
+    --border: 226 39% 19%;
+    --input: 226 39% 19%;
+    --ring: 224 30% 60%;
 
     /* Gaming-specific design tokens */
-    --steam-blue: 199 89% 48%;
-    --steam-dark: 210 11% 15%;
-    --shark-accent: 180 100% 50%;
-    --gaming-glow: 199 89% 48%;
+    --steam-blue: 224 30% 60%;     /* #7B8BB8 */
+    --steam-dark: 224 52% 4%;      /* #050810 */
+    --shark-accent: 221 39% 90%;   /* #DDE3F0 */
+    --gaming-glow: 224 30% 60%;
 
     /* Gradients */
     --gradient-hero: linear-gradient(
       135deg,
-      hsl(210 11% 15%) 0%,
-      hsl(217 19% 18%) 50%,
-      hsl(199 89% 48% / 0.1) 100%
+      hsl(224 52% 4%) 0%,
+      hsl(227 44% 8%) 50%,
+      hsl(226 32% 35% / 0.15) 100%
     );
     --gradient-card: linear-gradient(
       145deg,
-      hsl(217 19% 18%) 0%,
-      hsl(217 19% 24%) 100%
+      hsl(227 44% 8%) 0%,
+      hsl(226 39% 19%) 100%
     );
     --gradient-accent: linear-gradient(
       90deg,
-      hsl(199 89% 48%) 0%,
-      hsl(180 100% 50%) 100%
+      hsl(224 30% 60%) 0%,
+      hsl(221 39% 90%) 100%
     );
 
+    /* Status colors */
+    --success: 142 71% 45%;        /* #22C55E */
+    --success-deep: 142 72% 29%;   /* #15803D */
+    --success-badge: 147 61% 14%;  /* #0E3A22 */
+
+    --error: 4 88% 63%;            /* #F4574D */
+    --error-deep: 3 67% 42%;       /* #B32C24 */
+    --error-badge: 3 57% 15%;      /* #3A1210 */
+
+    --pending: 43 96% 56%;         /* #FBBF24 */
+    --pending-deep: 26 91% 37%;    /* #B45309 */
+    --pending-badge: 42 72% 14%;   /* #3D2E0A */
+
     /* Shadows and effects */
-    --shadow-glow: 0 0 20px hsl(199 89% 48% / 0.3);
-    --shadow-card: 0 8px 32px hsl(210 11% 10% / 0.5);
-    --shadow-intense: 0 0 40px hsl(199 89% 48% / 0.6);
-    --shadow-glow-trusted: 0 0 20px hsla(128, 89%, 48%, 0.3);
-    --shadow-glow-not-trusted: 0 0 20px hsla(0, 89%, 48%, 0.3);
+    --shadow-glow: 0 0 20px hsl(224 30% 60% / 0.3);
+    --shadow-card: 0 8px 32px hsl(224 52% 4% / 0.5);
+    --shadow-intense: 0 0 40px hsl(224 30% 60% / 0.6);
+    --shadow-glow-trusted: 0 0 20px hsl(142 71% 45% / 0.3);
+    --shadow-glow-not-trusted: 0 0 20px hsl(4 88% 63% / 0.3);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -176,6 +189,10 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-intense);
   }
 
+  .text-link {
+    @apply text-body-bold underline text-primary;
+  }
+
   .gaming-card {
     @apply rounded-lg border border-border/50;
     background: var(--gradient-card);
@@ -190,27 +207,27 @@ All colors MUST be HSL.
   }
 
   .card-trusted {
-    @apply rounded-lg border border-green-500/50;
+    @apply rounded-lg border border-success/50;
     background: var(--gradient-card);
     box-shadow: var(--shadow-card);
     transition: var(--transition-smooth);
   }
 
   .card-trusted:hover {
-    @apply border-green-600/50;
+    @apply border-success-deep/50;
     box-shadow: var(--shadow-glow-trusted);
     transform: translateY(-2px);
   }
 
   .card-not-trusted {
-    @apply rounded-lg border border-red-500/50;
+    @apply rounded-lg border border-error/50;
     background: var(--gradient-card);
     box-shadow: var(--shadow-card);
     transition: var(--transition-smooth);
   }
 
   .card-not-trusted:hover {
-    @apply border-red-600/50;
+    @apply border-error-deep/50;
     box-shadow: var(--shadow-glow-not-trusted);
     transform: translateY(-2px);
   }

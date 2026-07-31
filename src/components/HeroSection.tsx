@@ -39,7 +39,7 @@ export default function HeroSection() {
                                         </Badge>
                                     </Link>
                                     <Link to="https://github.com/steamShark" target="_blank" rel="noopener noreferrer">
-                                        <Badge className="bg-green-500/20 text-green-400 border-green-500/30 hover:bg-green-500/50 cursor-pointer">
+                                        <Badge className="bg-success/20 text-success border-success/30 hover:bg-success/50 cursor-pointer">
                                             🔓 Open Source
                                         </Badge>
                                     </Link>
@@ -126,7 +126,7 @@ export default function HeroSection() {
                                 {/* <div className="space-y-3">
                                         <div className="flex justify-between items-center">
                                             <span className="text-sm">Server Performance</span>
-                                            <span className="text-sm text-green-400">Excellent</span>
+                                            <span className="text-sm text-success">Excellent</span>
                                         </div>
                                         <div className="w-full bg-muted rounded-full h-2">
                                             <div className="bg-primary h-2 rounded-full w-[95%] glow-effect" />
@@ -134,10 +134,10 @@ export default function HeroSection() {
                                     </div> */}
                             </CardContent>
                             {/* <CardFooter className="flex flex-row items-center gap-10">
-                                <Badge className="bg-green-500/20 hover:bg-green-500/50 text-green-400">
+                                <Badge className="bg-success/20 hover:bg-success/50 text-success">
                                     API Online 🟢
                                 </Badge>
-                                <Badge className="bg-green-500/20 hover:bg-green-500/50 text-green-400">
+                                <Badge className="bg-success/20 hover:bg-success/50 text-success">
                                     Extension Online 🟢
                                 </Badge>
                             </CardFooter> */}
