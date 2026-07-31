@@ -1,3 +1,5 @@
+import { Occurrence } from "./occurrences";
+
 export interface Website {
   id: string;
   ssl_certificate: boolean;
@@ -14,9 +16,14 @@ export interface Website {
   risk_level: "unknown" | "low" | "medium" | "high" | "critical";
   status: "active" | "inactive" | "blocked" | "archived";
   verified: boolean;
-  occurrences: Occurrence[];
+  occurrences: Occurrence[] | null;
   created_at: string;
   updated_at: string;
+}
+
+export interface WebsiteDetailsResponse {
+  occurrences_count: number;
+  website: Website;
 }
 
 export interface ListWebsites {
@@ -26,6 +33,4 @@ export interface ListWebsites {
   data: Website[];
 }
 
-interface Occurrence {
-	id: string;
-}
+export type { Occurrence };

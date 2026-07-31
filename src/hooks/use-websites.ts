@@ -1,6 +1,5 @@
 import { getAllWbsites, getNotTrustedWebsites, getTrustedWebsites, getWebsiteDetails } from "@/api/websites";
-import { ListWebsites, Website } from "@/models/websites"
-import { ApiWrapperSchema } from "@/models/api/apiResponse"
+import { ListWebsites, Website, WebsiteDetailsResponse } from "@/models/websites"
 import { useQuery } from "@tanstack/react-query"
 
 //Function to use useQuery to get the websites
@@ -26,7 +25,7 @@ export function useNotTrustedWebsites() {
 }
 
 export function useWebsiteDetails(id: string) {
-  return useQuery<Website>({
+  return useQuery<WebsiteDetailsResponse>({
     queryKey: ["websites", id],
     queryFn: () => getWebsiteDetails(id),
     enabled: !!id
