@@ -155,6 +155,10 @@ export default {
     				'100%': {
     					transform: 'translateX(100px) rotate(5deg)'
     				}
+    			},
+    			'grid-scroll': {
+    				'0%': { backgroundPosition: '0 0' },
+    				'100%': { backgroundPosition: '60px 60px' },
     			}
     		},
     		animation: {
@@ -163,7 +167,8 @@ export default {
     			'fade-in': 'fade-in 0.5s ease-out',
     			float: 'float 3s ease-in-out infinite',
     			'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-    			'shark-swim': 'shark-swim 4s ease-in-out infinite alternate'
+    			'shark-swim': 'shark-swim 4s ease-in-out infinite alternate',
+    			'grid-scroll': 'grid-scroll 6s linear infinite',
     		}
     	}
     },
