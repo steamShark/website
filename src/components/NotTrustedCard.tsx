@@ -29,7 +29,7 @@ interface NotTrustedWebsiteCard {
     isOfficial: boolean;
 }
 
-export default function NotTrustedCard({ id, domain, displayName, description, isOfficial }: NotTrustedWebsiteCard) {
+export function NotTrustedCard({ id, domain, displayName, description, isOfficial }: NotTrustedWebsiteCard) {
     return (
         <Card key={id} className="card-not-trusted">{/* border-red-500/30 hover:border-red-500 */}
             <CardHeader>
@@ -74,3 +74,4 @@ export default function NotTrustedCard({ id, domain, displayName, description, i
         </Card>
     );
 }
+export default NotTrustedCard;

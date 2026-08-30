@@ -25,3 +25,10 @@ dist-ssr
 *.sw?
 #graphify
 graphify-out
+# design-sync
+.ds-sync/
+ds-bundle/
+.design-sync
+.design-sync/.cache/
+.design-sync/learnings/
+.design-sync/node_modules

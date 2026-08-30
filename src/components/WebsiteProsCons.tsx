@@ -1,6 +1,6 @@
 import { Website } from "@/models/websites";
 
-export default function WebsiteProsCons({ dataWebsite }: { dataWebsite: Website }) {
+export function WebsiteProsCons({ dataWebsite }: { dataWebsite: Website }) {
     const pros: string[] = [];
     const cons: string[] = [];
 
@@ -58,3 +58,4 @@ export default function WebsiteProsCons({ dataWebsite }: { dataWebsite: Website 
         </div>
     );
 }
+export default WebsiteProsCons;
