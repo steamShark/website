@@ -4,8 +4,12 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        - VITE_API_URL=${VITE_API_URL:-https://steamshark.app}
+        VITE_API_URL: ${VITE_API_URL:-https://api.steamshark.app}
+        PORT: ${PORT:-8999}
     container_name: steamshark-web
     ports:
-    - "8090:8090"
+      - "${PORT:-8999}:${PORT:-8999}"
+    environment:
+      VITE_API_URL: ${VITE_API_URL:-https://api.steamshark.app}
+      PORT: ${PORT:-8999}
     restart: unless-stopped
