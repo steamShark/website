@@ -35,10 +35,10 @@ To build and run with Dockerfile:
 
 ```bash
 docker build -t steamshark-web .
-docker run -p 8090:8090 steamshark-web
+docker run -p 8999:8999 steamshark-web
 ```
 
-Visit [http://localhost:8090](http://localhost:8090)
+Visit [http://localhost:8999](http://localhost:8999)
 
 ### Docker compose
 
@@ -46,4 +46,4 @@ You can simply run
 ```bash
 docker compose up --build -d
 ```
-Visit [http://localhost:8090](http://localhost:8090)
+Visit [http://localhost:8999](http://localhost:8999)
